@@ -7,3 +7,4 @@ openjdk17/
 .gradle/
 /.idea/
 /.vscode/
+!gradle/wrapper/gradle-wrapper.jar
