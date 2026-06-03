@@ -147,3 +147,26 @@ El servidor inicia en: http://localhost:8080
 **EstadoContrato:** ACTIVO | VENCIDO | CANCELADO
 
 **TipoContrato:** OBRA | SERVICIO
+
+---
+
+## Variables de entorno
+
+La aplicación puede configurarse mediante variables de entorno o un archivo `.env` en la raíz del proyecto.
+
+- **SPRING_DATA_MONGODB_URI**: URI de conexión a MongoDB. Ejemplo local: `mongodb://localhost:27017/obras`. Cuando se usa `docker-compose`, el servicio `app` por defecto apunta a `mongodb://mongo:27017/obras`.
+- **SERVER_PORT**: Puerto en el que arranca la aplicación (por defecto 8080).
+- **SPRING_PROFILES_ACTIVE**: (opcional) perfil activo de Spring, p.ej. `local`, `prod`.
+
+Se incluye un archivo de ejemplo: [`.env.example`](.env.example). Copialo a `.env` y ajusta valores antes de ejecutar con Docker o `gradlew`.
+
+### Uso con Docker Compose
+
+El `docker-compose.yml` incluido define los servicios `app` y `mongo`. Para levantar ambos:
+
+```bash
+docker compose up --build
+```
+
+La variable `SPRING_DATA_MONGODB_URI` del servicio `app` en `docker-compose.yml` está configurada para `mongodb://mongo:27017/obras`, por lo que no necesitas cambiarla para la ejecución con Docker Compose.
+
