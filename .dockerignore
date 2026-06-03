@@ -1,0 +1,9 @@
+build
+.gradle
+*.jar
+*.war
+.idea/
+.vscode/
+openjdk17*
+gradle-8.6*
+*.zip
