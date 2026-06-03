@@ -1,0 +1,9 @@
+# Ignore build artifacts and large local distributions
+build/
+gradle-8.6/
+openjdk17/
+*.zip
+*.jar
+.gradle/
+/.idea/
+/.vscode/
